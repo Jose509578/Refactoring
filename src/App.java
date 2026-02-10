@@ -10,20 +10,23 @@ public class App {
         procesarPedido(pedido1); // Código reutilizable
         //...
        }
-       public static void procesarPedido(Pedido pedido) {
 
-        System.out.println("-----------------------------------");
-        System.out.println("Cliente: " + pedido.getCliente().getNombre());
-        System.out.println("ID: " + pedido.getCliente().getId());
+        public static void procesarPedido(Pedido pedido) {
 
-        int i = 1;
-        for (Producto p : pedido.getProductos()) {
-            System.out.println(
-                    String.format(
-                            "Producto %d: %s - %.2f €",
-                            i++, p.getNombre(), p.getPrecio()
-                    )
-            );
+                String.format("-----------------------------------");
+                String.format("Cliente: %s", pedido.getCliente().getNombre());
+                String.format("ID: %d", pedido.getCliente().getId());
+            
+                int i = 1;
+                for (Producto p : pedido.getProductos()) {
+                    System.out.println(String.format(
+                        "Producto %d: %s - %.2f €",
+                        i++,
+                        p.getNombre(),
+                        p.getPrecio()
+                        ));
+                }
         }
-        }
+            
+        
 }
